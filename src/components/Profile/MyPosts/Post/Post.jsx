@@ -1,17 +1,19 @@
 import React from 'react';
 import classes from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
+   console.log(props.message)
+
    return (
-      
-            <div className={classes.item}>
-               <img src='https://www.film.ru/sites/default/files/images/Neytiri.jpg'></img>
-               post 1
-               <div>
-                  <span>like</span>
-               </div>
-            </div>
-            
+
+      <div className={classes.item}>
+         <img src='https://www.film.ru/sites/default/files/images/Neytiri.jpg'></img>
+            { props.message }
+         <div>
+   <span>like - { props.countLike }</span>
+         </div>
+      </div>
+
    )
 }
 

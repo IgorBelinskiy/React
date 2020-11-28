@@ -13,8 +13,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
-        <Header />
-        <Navbar />
+        <div className='app-header'>
+          <Header />
+        </div>
+
+        <div className='app-navbar'>
+          <Navbar />
+        </div>
+
         <div className='app-wrapper-content'>
           <Route path='/dialogs' component={Dialogs} />
           <Route path='/profile' component={Profile} />

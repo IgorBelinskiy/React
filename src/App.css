@@ -1,5 +1,5 @@
 .app-wrapper {
-  margin: 0 auto;
+  /* margin: 0 auto;
   display: grid;
   width: 1200px;
 
@@ -8,13 +8,27 @@
   "n c";
 
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
+  grid-template-columns: 2fr 10fr; */
   /* grid-gap: 10px; */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap:wrap;
+  max-width: 1200px;
 }
 
+.app-header {
+  flex: 0 1 100%;
+}
+
+.app-navbar {
+  flex: 0 1 20%;
+  /* display: flex; */
+  background-color: aqua;
+}
 
 .app-wrapper-content {
-  grid-area: c;
+  /* grid-area: c; */
+  flex: 0 1 80%;
   background-color: darkslateblue;
 }
 

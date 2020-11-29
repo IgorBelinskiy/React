@@ -9,11 +9,11 @@
 
 .dialogsItem a {
    text-decoration: none;
-   color: honeydew;
+   color: rgb(1, 177, 1);
 }
 
-.dialogsItem .active {
-   color: gold;
+.dialogsItem .active a {
+   color: rgb(251, 0, 0);
 }
 
 .dialogsItem .dialog {

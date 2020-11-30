@@ -12,7 +12,7 @@
    color: rgb(1, 177, 1);
 }
 
-.dialogsItem .active a {
+.dialogsItem a.active {
    color: rgb(251, 0, 0);
 }
 

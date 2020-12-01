@@ -10,8 +10,8 @@ const MyPosts = (props) => {
    //    { id: 3, message: 'blala', countLike: 2 }
    // ]
 
-   let postsElements = 
-      props.posts.map ( p => <Post message={p.message} countLike={p.countLike} />);
+   let postsElements =
+      props.posts.map(p => <Post message={p.message} countLike={p.countLike} />);
 
    return (
       <div className={classes.postsBlock}>

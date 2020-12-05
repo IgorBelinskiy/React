@@ -2,7 +2,6 @@ import React from 'react';
 import classes from './Post.module.css';
 
 const Post = (props) => {
-   console.log(props.message)
 
    return (
 

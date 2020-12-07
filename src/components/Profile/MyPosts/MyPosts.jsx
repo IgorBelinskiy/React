@@ -13,6 +13,7 @@ const MyPosts = (props) => {
 
 
    let addPost = () => {
+      debugger;
       props.addPost();
       // newPostElement.current.value = ''; // оставить пустую строку
       // props.updateNewPostText('');

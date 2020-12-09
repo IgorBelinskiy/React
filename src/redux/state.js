@@ -8,9 +8,9 @@ let store = {
          ],
          newPostText: 'it-kamasutra'
       },
-   
+
       dialogsPage: {
-   
+
          dialogs: [
             { id: 1, name: 'Igor' },
             { id: 2, name: 'Katya' },
@@ -27,32 +27,49 @@ let store = {
          ]
       }
    },
-   getState () {
-      debugger;
-      return this._state;
-   },
    _callsubscriber() {
       console.log('State changed');
    },
-   addPost() {
+
+   getState() {
       debugger;
-      let newPost = {
-         id: 5,
-         message: this._state.profilePage.newPostText,
-         countLike: 0
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._callsubscriber(this._state);
-   },
-   updateNewPostText(newText) {
-      this._state.profilePage.newPostText = newText;
-      this._callsubscriber(this._state);
+      return this._state;
    },
    subscribe(observer) {
       this._callsubscriber = observer;
-    }
-   
+   },
+
+   // addPost() {
+   //    let newPost = {
+   //       id: 5,
+   //       message: this._state.profilePage.newPostText,
+   //       countLike: 0
+   //    };
+   //    this._state.profilePage.posts.push(newPost);
+   //    this._state.profilePage.newPostText = '';
+   //    this._callsubscriber(this._state);
+   // },
+   // updateNewPostText(newText) {
+   //    this._state.profilePage.newPostText = newText;
+   //    this._callsubscriber(this._state);
+   // },
+
+   dispatch(action) {
+      if (action.type === 'ADD-POST') {
+         debugger;
+         let newPost = {
+            id: 5,
+            message: this._state.profilePage.newPostText,
+            countLike: 0
+         };
+         this._state.profilePage.posts.push(newPost);
+         this._state.profilePage.newPostText = '';
+         this._callsubscriber(this._state);
+      } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+         this._state.profilePage.newPostText = action.newText;
+         this._callsubscriber(this._state);
+      }
+   }
 }
 
 
@@ -62,4 +79,3 @@ let store = {
 
 
 export default store;
-window.state = store;

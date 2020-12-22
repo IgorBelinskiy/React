@@ -9,9 +9,6 @@ import { Provider } from 'react-redux';
 // import StoreContext, { Provider } from './StoreContext';
 
 
-
-let rerenderEntireTree = (state) => {
-
    ReactDOM.render(
       <BrowserRouter>
          {/* <React.StrictMode> */}
@@ -21,16 +18,5 @@ let rerenderEntireTree = (state) => {
          {/* </React.StrictMode> */}
       </BrowserRouter>, document.getElementById('root')
    );
-}
-
-rerenderEntireTree(store.getState());
-
-store.subscribe(() => {
-   let state = store.getState();
-   rerenderEntireTree(state);
-});
-
-
-
 
 reportWebVitals();

@@ -1,3 +1,25 @@
-.photo {
+.user_img img {
    width: 50px;
+}
+
+.user {
+   display: flex;
+   justify-content: space-between;
+   margin: 30px 10px;
+   background: rgb(8, 152, 255);
+   max-width: 600px;
+   margin: 20px auto;
+}
+
+.left {
+   padding-left: 20px;
+}
+
+.right {
+   padding-right: 30px;
+}
+
+.user_name {
+   color: white;
+   font-size: 20px;
 }

@@ -1,7 +1,9 @@
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET-USERS';
+const SET_CURRENT_PAGE = 'SET-CURRENT-PAGE'
 const TOGGLE_FOLLOW = 'TOGGLE-FOLLOW';
+const SET_TOTAL_USER_COUNT = 'SET-TOTAL-USER-COUNT';
 
 let initialState = {
    users: [
@@ -9,6 +11,9 @@ let initialState = {
       // { id: 2, fullName: 'Katya', photoUrl: 'https://vokrug-tv.ru/pic/person/f/2/0/7/f2073f62bfa96bbc291ebd37ef8c1659.jpg', followed: true, status: 'I am a boss too', location: { city: 'Minsk', country: 'Belarus' } },
       // { id: 3, fullName: 'Vanya', photoUrl: 'https://vokrug-tv.ru/pic/person/f/2/0/7/f2073f62bfa96bbc291ebd37ef8c1659.jpg', followed: false, status: 'I am a boss too', location: { city: 'Moscow', country: 'Russia' } }
    ],
+   pageSize: 10,
+   totalUserCount: 300,
+   currentPage: 1,
 
 }
 
@@ -48,7 +53,20 @@ const usersReducer = (state = initialState, action) => {
             })
          }
       case SET_USERS:
-         return { ...state, users: [...state.users, ...action.users] }
+         return {
+            ...state,
+            users: action.users
+         }
+      case SET_CURRENT_PAGE:
+         return {
+            ...state,
+            currentPage: action.currentPage
+         }
+      case SET_TOTAL_USER_COUNT:
+         return {
+            ...state,
+            totalUserCount: action.count
+         }
 
       default:
          return state;
@@ -73,8 +91,18 @@ export const togglefAC = (userId) => {
 }
 export const setUsersAC = (users) => {
    return {
-      type: SET_USERS, users
+      type: SET_USERS, users: users
+   }
+}
+export const setCurrentPagesAC = (currentPage) => {
+   return {
+      type: SET_CURRENT_PAGE, currentPage: currentPage
    }
 }
 
+export const setTotalUserCountAC = (totalUserCount) => {
+   return {
+      type: SET_TOTAL_USER_COUNT, count: totalUserCount
+   }
+}
 export default usersReducer;

@@ -2,6 +2,14 @@
    width: 80px;
 }
 
+span {
+   padding: 7px;
+   cursor: pointer;
+}
+.selected {
+   font-weight: bold;
+}
+
 .user {
    display: flex;
    justify-content: space-between;

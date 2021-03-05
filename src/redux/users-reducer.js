@@ -12,8 +12,8 @@ let initialState = {
       // { id: 2, fullName: 'Katya', photoUrl: 'https://vokrug-tv.ru/pic/person/f/2/0/7/f2073f62bfa96bbc291ebd37ef8c1659.jpg', followed: true, status: 'I am a boss too', location: { city: 'Minsk', country: 'Belarus' } },
       // { id: 3, fullName: 'Vanya', photoUrl: 'https://vokrug-tv.ru/pic/person/f/2/0/7/f2073f62bfa96bbc291ebd37ef8c1659.jpg', followed: false, status: 'I am a boss too', location: { city: 'Moscow', country: 'Russia' } }
    ],
-   pageSize: 10,
-   totalUserCount: 300,
+   pageSize: 100,
+   totalUserCount: 900,
    currentPage: 1,
    isFetching: true,
 }
